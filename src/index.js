@@ -1,6 +1,7 @@
 const hbs = require('hbs')
 const express = require('express')
 const path = require('path')
+const sendEmail = require('./public/utils/sendEmail')
 
 const port = process.env.PORT || 3000
 const publicPath = path.join(__dirname, './public')
@@ -19,10 +20,16 @@ app.get('/', (req, res) => {
     })
 })
 
-app.post('/',(req,res)=>{
+app.post('/', async (req,res)=>{
     const {name, email, phone, subject, message} = req.body
-    console.log(req.body)
-    res.send('Received')
+    try {
+        await sendEmail(email, phone, subject, message)
+        res.render('success')
+
+    } catch (error) {
+        res.send('Bad request')
+    }
+        
 })
 
 
