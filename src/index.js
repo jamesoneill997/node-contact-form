@@ -22,15 +22,33 @@ app.get('/', (req, res) => {
 //submit data through form
 app.post('/', async (req,res)=>{
     const {name, email, phone, subject, message} = req.body
+    console.log(req.body)
     try {
         await sendEmail(name, email, phone, subject, message)
         res.render('success')
 
     } catch (error) {
-        console.log({error})
+        if(error.message ==='Email is invalid'){
         res.render('index',{
             error,
+            name,
+            phone,
+            subject,
+            message
         })
+    }
+    else{
+        res.render('index',{
+            error,
+            email,
+            name,
+            phone,
+            subject,
+            message
+        })
+    }
+
+
     }
         
 })
