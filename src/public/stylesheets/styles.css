@@ -11,6 +11,10 @@
     border-radius: 3px;
 }
 
+.error {
+    color: red;
+}
+
 fieldset{
     text-align: center;
     border-style: none;

@@ -13,19 +13,24 @@ app.use(express.urlencoded())
 app.use(express.static(publicPath))
 app.set('view engine','hbs')
 
-
+//Load document
 app.get('/', (req, res) => {
     res.render('index')
 })
 
+
+//submit data through form
 app.post('/', async (req,res)=>{
     const {name, email, phone, subject, message} = req.body
     try {
-        await sendEmail(email, phone, subject, message)
+        await sendEmail(name, email, phone, subject, message)
         res.render('success')
 
     } catch (error) {
-        res.send('Bad request')
+        console.log({error})
+        res.render('index',{
+            error,
+        })
     }
         
 })
