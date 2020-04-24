@@ -1,0 +1,68 @@
+#contact{
+    padding-top: 3px;
+    text-align: center;
+    font-style: italic;
+    background-color: lightgrey;
+    max-width: 550px;
+    height: auto;
+    color: green;
+    font-family: 'Raleway', sans-serif;
+    overflow-wrap: break-word;
+    border-radius: 3px;
+}
+
+fieldset{
+    text-align: center;
+    border-style: none;
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+@keyframes btn {
+    from {
+        background-color: darkgreen;
+    }
+    
+    to {
+        background-color: lightgreen;
+    }
+  }
+
+button{
+    background-color:darkgreen;
+    height: 40px;
+    border-style: none;
+    border-radius: 5px;
+    width: 370px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+button:hover {
+    animation-name: btn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+input{
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 4px;
+    width: 450px;
+}
+
+input:focus{
+    outline: none;
+}
+
+textarea {
+    height: 200px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 2px;
+    width: 380px;
+}

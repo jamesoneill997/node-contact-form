@@ -15,9 +15,7 @@ app.set('view engine','hbs')
 
 
 app.get('/', (req, res) => {
-    res.render('index', {
-        type: 'GET'
-    })
+    res.render('index')
 })
 
 app.post('/', async (req,res)=>{
