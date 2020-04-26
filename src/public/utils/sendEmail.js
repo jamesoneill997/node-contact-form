@@ -1,6 +1,6 @@
 const sgMail = require('@sendgrid/mail')
 const validator = require('validator')
-const yourEmail = 'james.oneill57@mail.dcu.ie'
+const yourEmail = 'directorservices@terraglen.ie'
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 

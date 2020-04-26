@@ -25,12 +25,14 @@ app.post('/', async (req,res)=>{
     console.log(req.body)
     try {
         await sendEmail(name, email, phone, subject, message)
-        res.render('success')
+        res.render('index',{
+            success: 'Success!'
+        })
 
     } catch (error) {
         if(error.message ==='Email is invalid'){
         res.render('index',{
-            error,
+            response: error,
             name,
             phone,
             subject,
@@ -39,7 +41,7 @@ app.post('/', async (req,res)=>{
     }
     else{
         res.render('index',{
-            error,
+            response: error,
             email,
             name,
             phone,

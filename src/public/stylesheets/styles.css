@@ -15,6 +15,10 @@
     color: red;
 }
 
+.success {
+    color: green;
+}
+
 fieldset{
     text-align: center;
     border-style: none;
